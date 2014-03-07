@@ -34,3 +34,11 @@ function romanToInteger(value) {
 	}
 	return total;
 }
+
+function sumRomanNumerals(value1, value2) {
+	if (isRomanNumeral(value1) && isRomanNumeral(value2)) {
+		return true
+	} else {
+		return 'Error: invalid format';
+	}
+}

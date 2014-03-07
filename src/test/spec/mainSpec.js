@@ -125,7 +125,7 @@ describe("Roman Numeral Calculator", function() {
     it("return error if values are not proper roman numerals", function() {
         expect(sumRomanNumerals('M4X', 'MM')).toEqual('Error: invalid format');
         expect(sumRomanNumerals('h34rtz', 'VII')).toEqual('Error: invalid format');
-        expect(sumRomanNumerals('DIX', 'MM')).toEqual('Error: invalid format');
+        expect(sumRomanNumerals('p00p', 'MM')).toEqual('Error: invalid format');
         expect(sumRomanNumerals('f0r', 'MM')).toEqual('Error: invalid format');
         expect(sumRomanNumerals('Sh1zzl3', 'MM')).toEqual('Error: invalid format');
     });
