@@ -42,4 +42,32 @@ describe("Roman Numeral Calculator", function() {
         expect(isRomanNumeral('MMM')).toBe(true);
         expect(isRomanNumeral('MMMM')).toBe(true);
     });
+
+    it("roman numeral validator returns true for valid roman numerals", function() {
+        expect(isRomanNumeral('george')).toBe(false);
+        expect(isRomanNumeral('can')).toBe(false);
+        expect(isRomanNumeral('suck')).toBe(false);
+        expect(isRomanNumeral('it')).toBe(false);
+        expect(isRomanNumeral('1231')).toBe(false);
+        expect(isRomanNumeral('gwet34t')).toBe(false);
+        expect(isRomanNumeral('dc123')).toBe(false);
+        expect(isRomanNumeral('WEGF#%DG')).toBe(false);
+        expect(isRomanNumeral('W#52gdg!')).toBe(false);
+        expect(isRomanNumeral('VXX')).toBe(false);
+        expect(isRomanNumeral('IVI')).toBe(false);
+        expect(isRomanNumeral('DMMD')).toBe(false);
+        expect(isRomanNumeral('MCILI')).toBe(false);
+    });
+
+    it("strip out and return ones place", function() {
+        expect(getOnesPlace('III')).toEqual('III');
+        expect(getOnesPlace('VIII')).toEqual('VIII');
+        expect(getOnesPlace('XXIV')).toEqual('IV');
+        expect(getOnesPlace('XLVII')).toEqual('VII');
+        expect(getOnesPlace('LXXIX')).toEqual('IX');
+        expect(getOnesPlace('CCLXXXVII')).toEqual('VII');
+        expect(getOnesPlace('MMDXLV')).toEqual('V');
+        expect(getOnesPlace('LXXIX')).toEqual('IX');
+        expect(getOnesPlace('CCLXXXII')).toEqual('II');
+    });
 });
