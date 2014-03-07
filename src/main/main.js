@@ -19,3 +19,12 @@ function integerToRoman(value) {
 	}
 	return romanNumeral;
 }
+
+function romanToInteger(value) {
+	var integerArray = value.toString().split('').reverse();
+	var romanNumeral = '';
+	for (i=integerArray.length-1;i>=0;i--) {
+		romanNumeral = romanNumeral + romanNumeralKey[i][integerArray[i]];
+	}
+	return romanNumeral;
+}

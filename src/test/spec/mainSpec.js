@@ -81,4 +81,27 @@ describe("Roman Numeral Calculator", function() {
         expect(integerToRoman(2175)).toEqual('MMCLXXV');
         expect(integerToRoman(3999)).toEqual('MMMCMXCIX');
     });
+
+    it("convert roman numeral to integer", function() {
+        expect(integerToRoman('I')).toEqual(1);
+        expect(integerToRoman('II')).toEqual(2);
+        expect(integerToRoman('IV')).toEqual(3);
+        expect(integerToRoman('IV')).toEqual(4);
+        expect(integerToRoman('V')).toEqual(5);
+        expect(integerToRoman('VI')).toEqual(6);
+        expect(integerToRoman('VII')).toEqual(7);
+        expect(integerToRoman('VIII')).toEqual(8);
+        expect(integerToRoman('IX')).toEqual(9);
+        expect(integerToRoman('X')).toEqual(10);
+        expect(integerToRoman('XII')).toEqual(12);
+        expect(integerToRoman('XIV')).toEqual(14);
+        expect(integerToRoman('XVII')).toEqual(17);
+        expect(integerToRoman('XIX')).toEqual(19);
+        expect(integerToRoman('CCCXCIV')).toEqual(394);
+        expect(integerToRoman('CDLXXV')).toEqual(475);
+        expect(integerToRoman('CMLXXXIII')).toEqual(983);
+        expect(integerToRoman('MDCCXCV')).toEqual(1795);
+        expect(integerToRoman('MMCLXXV')).toEqual(2175);
+        expect(integerToRoman('MMMCMXCIX')).toEqual(3999);
+    });
 });
