@@ -104,4 +104,29 @@ describe("Roman Numeral Calculator", function() {
         expect(romanToInteger('MMCLXXV')).toEqual(2175);
         expect(romanToInteger('MMMCMXCIX')).toEqual(3999);
     });
+
+    it("sum numerals together and return value if sum is <= 3999", function() {
+        expect(sumRomanNumerals('I', 'I')).toEqual('II');
+        expect(sumRomanNumerals('I', 'V')).toEqual('VI');
+        expect(sumRomanNumerals('XXI', 'LXIX')).toEqual('XC');
+        expect(sumRomanNumerals('CCX', 'DCC')).toEqual('CMX');
+        expect(sumRomanNumerals('MDCCXVII', 'DIX')).toEqual('MMCCXXVI');
+        expect(sumRomanNumerals('MM', 'MCMXCIX')).toEqual('MMMCMXCIX');
+
+    });
+
+    it("return error if sum is > 3999", function() {
+        expect(sumRomanNumerals('MM', 'MM')).toEqual('Error: sum of values exceeds 3999');
+        expect(sumRomanNumerals('MMM', 'MM')).toEqual('Error: sum of values exceeds 3999');
+        expect(sumRomanNumerals('MDCCXVII', 'MM')).toEqual('Error: sum of values exceeds 3999');
+        expect(sumRomanNumerals('MMMCMXCIX', 'MDCCXCV')).toEqual('Error: sum of values exceeds 3999');
+    });
+
+    it("return error if values are not proper roman numerals", function() {
+        expect(sumRomanNumerals('M4X', 'MM')).toEqual('Error: invalid format');
+        expect(sumRomanNumerals('h34rtz', 'VII')).toEqual('Error: invalid format');
+        expect(sumRomanNumerals('DIX', 'MM')).toEqual('Error: invalid format');
+        expect(sumRomanNumerals('f0r', 'MM')).toEqual('Error: invalid format');
+        expect(sumRomanNumerals('Sh1zzl3', 'MM')).toEqual('Error: invalid format');
+    });
 });
