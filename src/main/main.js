@@ -14,17 +14,23 @@ function isRomanNumeral(value) {
 function integerToRoman(value) {
 	var integerArray = value.toString().split('').reverse();
 	var romanNumeral = '';
-	for (i=integerArray.length-1;i>=0;i--) {
+	for(i = integerArray.length-1; i >= 0; i--) {
 		romanNumeral = romanNumeral + romanNumeralKey[i][integerArray[i]];
 	}
 	return romanNumeral;
 }
 
 function romanToInteger(value) {
-	var integerArray = value.toString().split('').reverse();
-	var romanNumeral = '';
-	for (i=integerArray.length-1;i>=0;i--) {
-		romanNumeral = romanNumeral + romanNumeralKey[i][integerArray[i]];
+	var charArray=value.split('');
+	var counter = 0, previousValue = 0, currentValue, store, total = 0;
+	for (i = charArray.length-1; i >= 0; i--) {
+		currentValue = values[charArray[i]];
+		if (currentValue >= previousValue) {
+			total = total + currentValue;
+		} else {
+			total = total - currentValue;
+		}
+		previousValue = currentValue;
 	}
-	return romanNumeral;
+	return total;
 }
