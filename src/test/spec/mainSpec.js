@@ -40,7 +40,6 @@ describe("Roman Numeral Calculator", function() {
         expect(isRomanNumeral('M')).toBe(true);
         expect(isRomanNumeral('MM')).toBe(true);
         expect(isRomanNumeral('MMM')).toBe(true);
-        expect(isRomanNumeral('MMMM')).toBe(true);
     });
 
     it("roman numeral validator returns false for invalid roman numerals", function() {
@@ -118,7 +117,7 @@ describe("Roman Numeral Calculator", function() {
     it("return error if sum is > 3999", function() {
         expect(sumRomanNumerals('MM', 'MM')).toEqual('Error: sum of values exceeds 3999');
         expect(sumRomanNumerals('MMM', 'MM')).toEqual('Error: sum of values exceeds 3999');
-        expect(sumRomanNumerals('MDCCXVII', 'MM')).toEqual('Error: sum of values exceeds 3999');
+        expect(sumRomanNumerals('MDCCXVII', 'MMD')).toEqual('Error: sum of values exceeds 3999');
         expect(sumRomanNumerals('MMMCMXCIX', 'MDCCXCV')).toEqual('Error: sum of values exceeds 3999');
     });
 

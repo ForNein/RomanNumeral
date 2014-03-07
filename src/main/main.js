@@ -21,7 +21,7 @@ function integerToRoman(value) {
 }
 
 function romanToInteger(value) {
-	var charArray=value.split('');
+	var charArray = value.split('');
 	var counter = 0, previousValue = 0, currentValue, store, total = 0;
 	for (i = charArray.length-1; i >= 0; i--) {
 		currentValue = values[charArray[i]];
@@ -37,7 +37,12 @@ function romanToInteger(value) {
 
 function sumRomanNumerals(value1, value2) {
 	if (isRomanNumeral(value1) && isRomanNumeral(value2)) {
-		return true
+		var total = romanToInteger(value1) + romanToInteger(value2);
+		if (total > 3999) {
+			return 'Error: sum of values exceeds 3999';
+		} else {
+			return integerToRoman(total);
+		}
 	} else {
 		return 'Error: invalid format';
 	}
