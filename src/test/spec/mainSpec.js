@@ -43,7 +43,7 @@ describe("Roman Numeral Calculator", function() {
         expect(isRomanNumeral('MMMM')).toBe(true);
     });
 
-    it("roman numeral validator returns true for valid roman numerals", function() {
+    it("roman numeral validator returns false for invalid roman numerals", function() {
         expect(isRomanNumeral('george')).toBe(false);
         expect(isRomanNumeral('can')).toBe(false);
         expect(isRomanNumeral('suck')).toBe(false);
@@ -59,15 +59,26 @@ describe("Roman Numeral Calculator", function() {
         expect(isRomanNumeral('MCILI')).toBe(false);
     });
 
-    it("strip out and return ones place", function() {
-        expect(getOnesPlace('III')).toEqual('III');
-        expect(getOnesPlace('VIII')).toEqual('VIII');
-        expect(getOnesPlace('XXIV')).toEqual('IV');
-        expect(getOnesPlace('XLVII')).toEqual('VII');
-        expect(getOnesPlace('LXXIX')).toEqual('IX');
-        expect(getOnesPlace('CCLXXXVII')).toEqual('VII');
-        expect(getOnesPlace('MMDXLV')).toEqual('V');
-        expect(getOnesPlace('LXXIX')).toEqual('IX');
-        expect(getOnesPlace('CCLXXXII')).toEqual('II');
+    it("convert integer to roman numeral", function() {
+        expect(integerToRoman(1)).toEqual('I');
+        expect(integerToRoman(2)).toEqual('II');
+        expect(integerToRoman(3)).toEqual('III');
+        expect(integerToRoman(4)).toEqual('IV');
+        expect(integerToRoman(5)).toEqual('V');
+        expect(integerToRoman(6)).toEqual('VI');
+        expect(integerToRoman(7)).toEqual('VII');
+        expect(integerToRoman(8)).toEqual('VIII');
+        expect(integerToRoman(9)).toEqual('IX');
+        expect(integerToRoman(10)).toEqual('X');
+        expect(integerToRoman(12)).toEqual('XII');
+        expect(integerToRoman(14)).toEqual('XIV');
+        expect(integerToRoman(17)).toEqual('XVII');
+        expect(integerToRoman(19)).toEqual('XIX');
+        expect(integerToRoman(394)).toEqual('CCCXCIV');
+        expect(integerToRoman(475)).toEqual('CDLXXV');
+        expect(integerToRoman(983)).toEqual('CMLXXXIII');
+        expect(integerToRoman(1795)).toEqual('MDCCXCV');
+        expect(integerToRoman(2175)).toEqual('MMCLXXV');
+        expect(integerToRoman(3999)).toEqual('MMMCMXCIX');
     });
 });
