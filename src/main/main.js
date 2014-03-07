@@ -22,7 +22,7 @@ function integerToRoman(value) {
 
 function romanToInteger(value) {
 	var charArray = value.split('');
-	var counter = 0, previousValue = 0, currentValue, store, total = 0;
+	var currentValue, previousValue = 0, total = 0;
 	for (i = charArray.length-1; i >= 0; i--) {
 		currentValue = values[charArray[i]];
 		(currentValue >= previousValue) ? total = total + currentValue : total = total - currentValue;
